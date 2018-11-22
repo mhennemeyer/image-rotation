@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Rotation View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RotationViewController" customModule="BildRotation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdY-Ro-hjr">
+                                <rect key="frame" x="20" y="415" width="100" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="MtY-1D-V6B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bmo-Nz-CtY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bmo-Nz-CtY" secondAttribute="height" id="byk-6b-Vys"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-180" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="lqo-8K-dQR">
+                                <rect key="frame" x="138" y="415" width="219" height="31"/>
+                                <connections>
+                                    <action selector="rotationSliderDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="XpV-VB-LWO"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VZQ-Kh-Jhh">
+                                <rect key="frame" x="20" y="465" width="335" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" tag="-180" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsl-65-C3I">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rotationButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcj-lT-388"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="-90" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4S-Ab-Vf5">
+                                        <rect key="frame" x="67" y="0.0" width="67" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rotationButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tGR-Hm-Da5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64B-ya-Ron">
+                                        <rect key="frame" x="134" y="0.0" width="67" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rotationButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zwe-QP-QTq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="90" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQd-q4-PXc">
+                                        <rect key="frame" x="201" y="0.0" width="67" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rotationButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TT0-Vl-48X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="180" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le8-QZ-PJB">
+                                        <rect key="frame" x="268" y="0.0" width="67" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="rotationButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWC-O0-xye"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bmo-Nz-CtY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Sf-UV-qBQ"/>
+                            <constraint firstItem="lqo-8K-dQR" firstAttribute="leading" secondItem="UdY-Ro-hjr" secondAttribute="trailing" constant="20" id="3L4-Wm-ZEz"/>
+                            <constraint firstItem="UdY-Ro-hjr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CFr-z5-RWQ"/>
+                            <constraint firstItem="UdY-Ro-hjr" firstAttribute="top" secondItem="bmo-Nz-CtY" secondAttribute="bottom" constant="20" id="Hek-g0-bXv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bmo-Nz-CtY" secondAttribute="trailing" id="NRv-gi-WXm"/>
+                            <constraint firstItem="VZQ-Kh-Jhh" firstAttribute="top" secondItem="lqo-8K-dQR" secondAttribute="bottom" constant="20" id="Orf-HP-UHP"/>
+                            <constraint firstItem="VZQ-Kh-Jhh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PEf-kw-qWo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VZQ-Kh-Jhh" secondAttribute="trailing" constant="20" id="QQ2-hh-5Cb"/>
+                            <constraint firstItem="lqo-8K-dQR" firstAttribute="top" secondItem="bmo-Nz-CtY" secondAttribute="bottom" constant="20" id="bWu-qu-0DO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lqo-8K-dQR" secondAttribute="trailing" constant="20" id="bj4-9a-z0g"/>
+                            <constraint firstItem="bmo-Nz-CtY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tMp-o6-qaB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="degreeLabel" destination="UdY-Ro-hjr" id="4M2-s6-YXj"/>
+                        <outlet property="imageView" destination="bmo-Nz-CtY" id="czQ-aE-wJo"/>
+                        <outlet property="rotationSlider" destination="lqo-8K-dQR" id="ODv-J2-8jn"/>
+                        <outletCollection property="rotationButtons" destination="Gsl-65-C3I" collectionClass="NSMutableArray" id="VY3-En-H2X"/>
+                        <outletCollection property="rotationButtons" destination="n4S-Ab-Vf5" collectionClass="NSMutableArray" id="YTH-xj-CJC"/>
+                        <outletCollection property="rotationButtons" destination="64B-ya-Ron" collectionClass="NSMutableArray" id="Dgr-rv-vCn"/>
+                        <outletCollection property="rotationButtons" destination="WQd-q4-PXc" collectionClass="NSMutableArray" id="c9e-A2-Zs2"/>
+                        <outletCollection property="rotationButtons" destination="le8-QZ-PJB" collectionClass="NSMutableArray" id="jFi-vN-WGp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2076" y="716"/>
         </scene>
     </scenes>
 </document>

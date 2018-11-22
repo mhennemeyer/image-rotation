@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D2DE27221A5706000D0AECC /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D2DE27121A5706000D0AECC /* icon.png */; };
+		5D2DE27421A57CA600D0AECC /* UIImage+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2DE27321A57CA600D0AECC /* UIImage+Rotation.swift */; };
 		5D5A0C3621A56230005794FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0C3521A56230005794FE /* AppDelegate.swift */; };
-		5D5A0C3821A56230005794FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0C3721A56230005794FE /* ViewController.swift */; };
+		5D5A0C3821A56230005794FE /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A0C3721A56230005794FE /* RotationViewController.swift */; };
 		5D5A0C3B21A56230005794FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0C3921A56230005794FE /* Main.storyboard */; };
 		5D5A0C3D21A56232005794FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0C3C21A56232005794FE /* Assets.xcassets */; };
 		5D5A0C4021A56232005794FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A0C3E21A56232005794FE /* LaunchScreen.storyboard */; };
+		5DA5806C21A6CCDB00EC17ED /* MHImageEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA5806B21A6CCDB00EC17ED /* MHImageEditing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D2DE27121A5706000D0AECC /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5D2DE27321A57CA600D0AECC /* UIImage+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotation.swift"; sourceTree = "<group>"; };
 		5D5A0C3221A56230005794FE /* BildRotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BildRotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5A0C3521A56230005794FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D5A0C3721A56230005794FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D5A0C3721A56230005794FE /* RotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
 		5D5A0C3A21A56230005794FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D5A0C3C21A56232005794FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D5A0C3F21A56232005794FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D5A0C4121A56232005794FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DA5806B21A6CCDB00EC17ED /* MHImageEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHImageEditing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +60,15 @@
 		5D5A0C3421A56230005794FE /* BildRotation */ = {
 			isa = PBXGroup;
 			children = (
+				5D2DE27121A5706000D0AECC /* icon.png */,
 				5D5A0C3521A56230005794FE /* AppDelegate.swift */,
-				5D5A0C3721A56230005794FE /* ViewController.swift */,
+				5D5A0C3721A56230005794FE /* RotationViewController.swift */,
 				5D5A0C3921A56230005794FE /* Main.storyboard */,
 				5D5A0C3C21A56232005794FE /* Assets.xcassets */,
 				5D5A0C3E21A56232005794FE /* LaunchScreen.storyboard */,
 				5D5A0C4121A56232005794FE /* Info.plist */,
+				5D2DE27321A57CA600D0AECC /* UIImage+Rotation.swift */,
+				5DA5806B21A6CCDB00EC17ED /* MHImageEditing.swift */,
 			);
 			path = BildRotation;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2DE27221A5706000D0AECC /* icon.png in Resources */,
 				5D5A0C4021A56232005794FE /* LaunchScreen.storyboard in Resources */,
 				5D5A0C3D21A56232005794FE /* Assets.xcassets in Resources */,
 				5D5A0C3B21A56230005794FE /* Main.storyboard in Resources */,
@@ -135,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D5A0C3821A56230005794FE /* ViewController.swift in Sources */,
+				5D5A0C3821A56230005794FE /* RotationViewController.swift in Sources */,
 				5D5A0C3621A56230005794FE /* AppDelegate.swift in Sources */,
+				5D2DE27421A57CA600D0AECC /* UIImage+Rotation.swift in Sources */,
+				5DA5806C21A6CCDB00EC17ED /* MHImageEditing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthiashennemeyer.BildRotation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthiashennemeyer.BildRotation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
