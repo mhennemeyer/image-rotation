@@ -13,24 +13,22 @@ enum MHImageEditing {}
 extension MHImageEditing {
   class Rotation {
     static func rotateImage(_ image: UIImage, degree: Float) -> UIImage? {
-      let radians = CGFloat(degree / 180 * .pi)
-      var rotatedFrame = CGRect(origin: CGPoint.zero,size:  image.size)
-        .applying(CGAffineTransform(rotationAngle: radians))
-      rotatedFrame.origin = CGPoint.zero
+      let rad = CGFloat(degree / 180 * .pi)
+      var boundingFrame = CGRect(origin: CGPoint.zero,size:  image.size)
+        .applying(CGAffineTransform(rotationAngle: rad))
+      boundingFrame.origin = CGPoint.zero
       
+      boundingFrame.size.width.round(.down)
+      boundingFrame.size.height.round(.down)
       
-      
-      rotatedFrame.size.width.round(.down)
-      rotatedFrame.size.height.round(.down)
-      
-      UIGraphicsBeginImageContextWithOptions(rotatedFrame.size, false, image.scale)
+      UIGraphicsBeginImageContextWithOptions(boundingFrame.size, false, image.scale)
       let context = UIGraphicsGetCurrentContext()!
       
       context.translateBy(
-        x: rotatedFrame.midX,
-        y: rotatedFrame.midY
+        x: boundingFrame.midX,
+        y: boundingFrame.midY
       )
-      context.rotate(by: radians)
+      context.rotate(by: rad)
       
       image.draw(
         in: CGRect(
