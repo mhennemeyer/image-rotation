@@ -3,7 +3,7 @@
 //  BildRotation
 //
 //  Created by Matthias Hennemeyer on 21.11.18.
-//  Copyright © 2018 Matthias Hennemeyer. All rights reserved.
+//  Copyright © 2018 Matthias Hennemeyer. MIT.
 //
 
 import UIKit
